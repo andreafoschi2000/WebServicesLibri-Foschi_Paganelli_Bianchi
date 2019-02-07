@@ -7,22 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnShowWeather" Content="ShowCF" HorizontalAlignment="Left" Margin="43,90,0,0" VerticalAlignment="Top" Width="138" Height="48" Click="btnShowWeather_Click"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="26" Margin="344,30,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="221"/>
-        <TextBox x:Name="txtCognome" HorizontalAlignment="Left" Height="24" Margin="344,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="221"/>
-        <TextBox x:Name="txtComune" HorizontalAlignment="Left" Height="35" Margin="344,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="221"/>
-        <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="24" Margin="344,130,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="221"/>
-        <TextBox x:Name="txtSesso" HorizontalAlignment="Left" Height="29" Margin="344,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="221"/>
-        <TextBlock HorizontalAlignment="Left" Margin="289,28,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" Height="26" Width="39" RenderTransformOrigin="4.519,0.568"/>
-        <TextBlock HorizontalAlignment="Left" Margin="269,60,0,0" TextWrapping="Wrap" Text="Cognome" VerticalAlignment="Top" Height="26" Width="59" RenderTransformOrigin="4.519,0.568"/>
-        <TextBlock HorizontalAlignment="Left" Margin="269,88,0,0" TextWrapping="Wrap" Text="Comune" VerticalAlignment="Top" Height="26" Width="59" RenderTransformOrigin="4.519,0.568"/>
-        <TextBlock HorizontalAlignment="Left" Margin="277,124,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top" Height="26" Width="59" RenderTransformOrigin="4.519,0.568"/>
-        <TextBlock HorizontalAlignment="Left" Margin="277,156,0,0" TextWrapping="Wrap" Text="Sesso" VerticalAlignment="Top" Height="26" Width="59" RenderTransformOrigin="4.519,0.568"/>
-        <Label x:Name="lblResult" Content="Label" HorizontalAlignment="Left" Height="26" Margin="328,232,0,0" VerticalAlignment="Top" Width="289"/>
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="199,232,0,0" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Width="66"/>
-        <Button x:Name="btnREST" Content="ShowCF(REST)" HorizontalAlignment="Left" Margin="43,298,0,0" VerticalAlignment="Top" Width="168" Height="80" Click="btnREST_Click"/>
-        <Button x:Name="btnGET" Content="ShowCF(GET)" HorizontalAlignment="Left" Margin="360,298,0,0" VerticalAlignment="Top" Width="164" Height="80" Click="btnGET_Click"/>
-        <TextBox x:Name="TxtLibro" HorizontalAlignment="Left" Height="40" Margin="637,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="124"/>
-
+        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Numero libri &quot;Ultimi Arrivi&quot; del reparto &quot;Fumetti:" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Height="32" Width="279"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="107,51,0,0" VerticalAlignment="Top" Width="30"/>
+        <Label Content="Elenco dei libri scontati di ogni reparto ordinati &#xD;&#xA;dal meno scontato al più scontato:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Height="42" Width="279"/>
+        <ListBox HorizontalAlignment="Left" Height="214" Margin="106,179,0,0" VerticalAlignment="Top" Width="183"/>
+        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Elenco libri archiviati:" HorizontalAlignment="Left" Margin="367,19,0,0" VerticalAlignment="Top" Height="32" Width="121"/>
+        <Label Content="gg/mm/aaaa" HorizontalAlignment="Left" Margin="407,64,0,0" VerticalAlignment="Top" Height="32" Width="81"/>
+        <Label Content="al" HorizontalAlignment="Left" Margin="499,64,0,0" VerticalAlignment="Top" Height="32" Width="26" RenderTransformOrigin="-0.547,0.492"/>
+        <Label Content="gg/mm/aaaa" HorizontalAlignment="Left" Margin="530,64,0,0" VerticalAlignment="Top" Height="32" Width="86"/>
+        <Label Content="Dal" HorizontalAlignment="Left" Margin="367,64,0,0" VerticalAlignment="Top" Height="32" Width="33"/>
+        <ListBox HorizontalAlignment="Left" Height="135" Margin="447,101,0,0" VerticalAlignment="Top" Width="274"/>
+        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="367,101,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Inserisci codice carrello" HorizontalAlignment="Left" Margin="367,241,0,0" VerticalAlignment="Top" Height="30" Width="137"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="522,241,0,0" VerticalAlignment="Top" Height="30" Width="85"/>
+        <Label Content="Elenco titoli libri acquistati con numero copie&#xD;&#xA;e nome utente associato al carrello" HorizontalAlignment="Left" Margin="367,276,0,0" VerticalAlignment="Top" Height="51" Width="286"/>
+        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="377,332,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox HorizontalAlignment="Left" Height="77" Margin="466,332,0,0" VerticalAlignment="Top" Width="255"/>
     </Grid>
 </Window>
