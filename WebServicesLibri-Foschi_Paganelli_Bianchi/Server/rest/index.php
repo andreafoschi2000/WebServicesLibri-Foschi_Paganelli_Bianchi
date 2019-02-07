@@ -2,17 +2,34 @@
 // process client request (via URL)
 	header ("Content-Type_application/json");
 	include ("function.php");
-	if(!empty($_GET['name'])){
+	if(!empty($_GET['index'])){
 	
-			$name=$_GET['name'];
-			$price=get_price($name);
-	
+			$index=$_GET['index'];
+			//$price=get_price($name);
+			switch($index)
+			{
+				case 0:
+				$ids = get_fumetti();
+				$count = get_category($ids);
+				break;
+				
+				case 1:
+				break;
+				
+				case 2:
+				break;
+				
+				case 3:
+				break;
+			}
+			
+			/*
 			if(empty($price))
 		//book not found
 			deliver_response(200,"book not found", NULL);
 			else
 			//respond book price
-			deliver_response(200,"book found", $price);
+			deliver_response(200,"book found", $price); */
 				}
 	else
 	{

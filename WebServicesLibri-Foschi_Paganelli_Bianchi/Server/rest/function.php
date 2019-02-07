@@ -27,4 +27,35 @@
 	 }
  }
 
+ function get_category($ids)
+ {
+	 $url = file_get_contents('http://localhost/Server/libricateg.json');
+	 $books = json_decode($url, true);
+	 
+	 foreach($ids as $index)
+	 {
+		 $tipo = get_categoria($index);
+	 }
+	 
+ }
+ function get_categoria($index)
+ {
+	 $url = file_get_contents('http://localhost/Server/libricateg.json');
+	 $books = json_decode($url, true);
+	 foreach($books as $book)
+	 {
+		 if($book["tipo"] == "Ultimi
+	 }
+ }
+ function get_fumetti()
+ {	
+	$url = file_get_contents('http://localhost/Server/reparti.json');
+	$categs = json_decode($url, true);
+	foreach($categs as $categ=>$category)
+	{
+		if($categ['tipo'] == 'fumetto')
+			$array = $categ["ID"];
+	}
+	return $array;
+ }
 ?>
