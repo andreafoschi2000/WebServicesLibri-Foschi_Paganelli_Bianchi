@@ -28,30 +28,33 @@
  }
 
  function get_category($ids)
- {
-	 $url = file_get_contents('http://localhost/Server/libricateg.json');
-	 $books = json_decode($url, true);
-	 
+ { 
+	$count = 0;
 	 foreach($ids as $index)
 	 {
 		 $tipo = get_categoria($index);
+		 if($tipo == "Ultimi arrivi")
+			 count++;
 	 }
-	 
+	 return $count;
  }
+ 
  function get_categoria($index)
  {
 	 $url = file_get_contents('http://localhost/Server/libricateg.json');
 	 $books = json_decode($url, true);
 	 foreach($books as $book)
 	 {
-		 if($book["tipo"] == "Ultimi
+		 if($book["ID"] == index)
+			 return $book["categoria"];
 	 }
  }
+ 
  function get_fumetti()
  {	
 	$url = file_get_contents('http://localhost/Server/reparti.json');
 	$categs = json_decode($url, true);
-	foreach($categs as $categ=>$category)
+	foreach($categs as $categ)
 	{
 		if($categ['tipo'] == 'fumetto')
 			$array = $categ["ID"];

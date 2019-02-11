@@ -11,6 +11,7 @@
 				case 0:
 				$ids = get_fumetti();
 				$count = get_category($ids);
+				deliver_response(200,"Request Successfully", $count;
 				break;
 				
 				case 1:
