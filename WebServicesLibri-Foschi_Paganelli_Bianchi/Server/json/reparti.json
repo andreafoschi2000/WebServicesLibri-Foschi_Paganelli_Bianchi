@@ -1,0 +1,8 @@
+{"reparti":[
+    { "ID":1, "tipo":"fumetto"},
+	{ "ID":2, "tipo":"architettura"},
+	{ "ID":3, "tipo":"arte"},
+	{ "ID":4, "tipo":"cucina"},
+	{ "ID":5, "tipo":"filosofia"}
+]
+}

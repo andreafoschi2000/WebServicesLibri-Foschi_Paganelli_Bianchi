@@ -1,0 +1,9 @@
+{"libri":[
+    { "ID":1, "titolo":"Spiderman","prezzo":15,"dataarch":"13/08/2015", "reparto":1, "autore":"Andrea Foschi"},
+	{ "ID":2, "titolo":"Monnalisa","prezzo":30,"dataarch":"20/10/2017", "reparto":3, "autore":"Giacomo Ravaglia"},
+	{ "ID":3, "titolo":"Il pantheon","prezzo":18,"dataarch":"15/05/2008", "reparto":2, "autore":"Claudio Bisio"},
+	{ "ID":4, "titolo":"Al di là del bene e del male","prezzo":25,"dataarch":"26/01/2003", "reparto":1, "autore":"Nietzche"},
+	{ "ID":5, "titolo":"Come cucinare le lasagne","prezzo":11,"dataarch":"11/02/1999", "reparto":4, "autore":"Antonino Canavacciuolo"},
+	{ "ID":6, "titolo":"Batman","prezzo":17,"dataarch":"10/03/2016", "reparto":1, "autore":"Marco Costanzo"}
+]
+}

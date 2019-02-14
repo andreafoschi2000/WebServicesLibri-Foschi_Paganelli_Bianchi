@@ -26,39 +26,66 @@
 		 }
 	 }
  }
-
- function get_category($ids)
- { 
-	$count = 0;
-	 foreach($ids as $index)
+ function get_libro($index)
+ {
+	 $url = file_get_contents('http://localhost/json/libri.json');
+	 $libri = json_decode($url, true);
+	 $count = 0;
+	 foreach($libri as $k=>$v)
 	 {
-		 $tipo = get_categoria($index);
-		 if($tipo == "Ultimi arrivi")
-			 count++;
+		 foreach($v as $key=>$value)
+		 {
+			 if($value["reparto"] == $index)
+			 {
+				 //echo $value["ID"];
+				 $status = get_categoria($value["ID"]);
+				 if($status)
+					 $count++;
+			 }
+		 }
 	 }
 	 return $count;
  }
  
- function get_categoria($index)
+ function get_categoria($valore)
  {
-	 $url = file_get_contents('http://localhost/Server/libricateg.json');
-	 $books = json_decode($url, true);
-	 foreach($books as $book)
+	 $url = file_get_contents('http://localhost/json/libricateg.json');
+	 $libricateg = json_decode($url, true);
+
+	 foreach($libricateg as $k=>$v)
 	 {
-		 if($book["ID"] == index)
-			 return $book["categoria"];
+		 foreach($v as $key=>$value)
+		 {
+			 //echo $value["libro"];
+			 if($value["libro"] == $valore)
+			 {
+				 if($value["categoria"] == "Ultimi arrivi")
+					 return true;
+				 else return false;
+			 }
+		 }
 	 }
- }
+}
  
  function get_fumetti()
  {	
-	$url = file_get_contents('http://localhost/Server/reparti.json');
+	$url = file_get_contents('http://localhost/json/reparti.json');
 	$categs = json_decode($url, true);
-	foreach($categs as $categ)
+	$array = array();
+	
+	foreach($categs as $k=>$v)
 	{
-		if($categ['tipo'] == 'fumetto')
-			$array = $categ["ID"];
+		foreach ($v as $key=>$value)
+		{
+			//echo $value["tipo"];
+			if($value["tipo"] == "fumetto")
+			{
+				//$array = $categ["ID"];
+				//echo $value["ID"];
+				return $value["ID"];
+			}
+		}
 	}
-	return $array;
+
  }
 ?>

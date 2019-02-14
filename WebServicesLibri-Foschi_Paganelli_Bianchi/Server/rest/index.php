@@ -2,16 +2,19 @@
 // process client request (via URL)
 	header ("Content-Type_application/json");
 	include ("function.php");
-	if(!empty($_GET['index'])){
+	//if(!empty($_GET['index'])){
 	
-			$index=$_GET['index'];
+		//	$index=$_GET['index'];
+			$index = 0;
 			//$price=get_price($name);
 			switch($index)
 			{
 				case 0:
 				$ids = get_fumetti();
-				$count = get_category($ids);
-				deliver_response(200,"Request Successfully", $count;
+				//echo $ids;
+				$count = get_libro($ids);
+				//deliver_response(200,"Request Successfully", $count);
+				echo $count;
 				break;
 				
 				case 1:
@@ -31,12 +34,14 @@
 			else
 			//respond book price
 			deliver_response(200,"book found", $price); */
-				}
+	//	}
+	/*
 	else
 	{
 		//throw invalid request
 		deliver_response(400,"Invalid request", NULL);
 	}
+	*/
 	
 	function deliver_response($status, $status_message, $data)
 	{
