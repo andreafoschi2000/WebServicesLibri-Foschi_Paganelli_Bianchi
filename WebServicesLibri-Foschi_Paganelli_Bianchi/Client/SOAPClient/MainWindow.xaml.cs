@@ -26,28 +26,7 @@ namespace SOAPClient
         {
             InitializeComponent();
         }
-
-        private void btnShowWeather_Click(object sender, RoutedEventArgs e)
-        {
-            CFService.CodiceFiscaleSoapClient client = new CFService.CodiceFiscaleSoapClient();
-            var response = client.CalcolaCodiceFiscale(txtNome.Text, txtCognome.Text, txtComune.Text, txtData.Text, txtSesso.Text);
-
-          //  ServiceReference1.TempConvertSoapClient c1 = new ServiceReference1.TempConvertSoapClient();
-         //  lblResult.Content = c1.CelsiusToFahrenheit("Celsius");
-
-            Calculator.CalculatorSoapClient c2 = new Calculator.CalculatorSoapClient();
-           // lblResult.Content = c2.Add(3, 7);
-
-           // lblResult.Content = response;
-        }
-
-        private void btnREST_Click(object sender, RoutedEventArgs e)
-        {
-            //POST
-            string url = "http://webservices.dotnethell.it/codicefiscale.asmx/CalcolaCodiceFiscale";
-            PostRequest(url,txtNome.Text,txtCognome.Text,txtComune.Text,txtData.Text,txtSesso.Text);
-        }
-
+         /*
         private void btnGET_Click(object sender, RoutedEventArgs e)
         {
             //GET
@@ -59,21 +38,24 @@ namespace SOAPClient
            
             
         }
+        */
+        
         //posso usare using se è presete metodo dispose
         async static void GetRequest(string url)
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage response = await client.GetAsync(url))
+                // Richiesta al server
+                using (HttpResponseMessage response = await (client.GetAsync(url)))
                 {
+                    // Estrazione del contenuto
                     using (HttpContent content = response.Content)
-                    {//possiamo usare HttpContentHeader headers = content.Headers;
-                        string mycontent = await content.ReadAsStringAsync();
-                        MessageBox.Show(mycontent);
-                    }
+                    {
+                        string myContent = await (content.ReadAsStringAsync());
 
+                        MessageBox.Show(myContent);
+                    }
                 }
-                
             }
         }
 
@@ -105,6 +87,13 @@ namespace SOAPClient
                 }
 
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string url = @"http://10.13.100.27/Server/index.php/" + "?op=0";
+
+            GetRequest(url);
         }
     }
 }

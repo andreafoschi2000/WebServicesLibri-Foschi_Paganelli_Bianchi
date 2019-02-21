@@ -4,20 +4,22 @@
 	include ("function.php");
 	//if(!empty($_GET['index'])){
 	
-		//	$index=$_GET['index'];
-			$index = 0;
+			//$index=$_GET['index'];
+			$index = 1;
 			//$price=get_price($name);
 			switch($index)
 			{
 				case 0:
-				$ids = get_fumetti();
+				$id = get_fumetti();
 				//echo $ids;
-				$count = get_libro($ids);
-				//deliver_response(200,"Request Successfully", $count);
-				echo $count;
+				$count = get_libro($id);
+				deliver_response(200,"Request Successfully", $count);
+				//echo $count;
 				break;
 				
 				case 1:
+				$sconti = get_sconti();
+				var_dump($sconti);
 				break;
 				
 				case 2:

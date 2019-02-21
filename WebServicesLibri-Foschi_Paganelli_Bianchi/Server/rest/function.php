@@ -86,6 +86,29 @@
 			}
 		}
 	}
-
  }
+ 
+ function get_sconti()
+ {
+	$url = file_get_contents('http://localhost/json/categorie.json');
+	$categories = json_decode($url, true);
+	$catg = array();
+	$i = 0;
+	
+	foreach($categories as $k=>$v)
+	{
+		 foreach($v as $key=>$value)
+		 {
+			 if($value["sconto"] > 0)
+			 {
+				$catg[$i]["tipo"] = $value["tipo"];
+				$catg[$i]["sconto"] = $value["sconto"];
+				$i++;
+			 }
+		 }
+	}
+	return $catg;
+ }
+ 
+ 
 ?>
