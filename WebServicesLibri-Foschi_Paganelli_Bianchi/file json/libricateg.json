@@ -5,6 +5,10 @@
 		{ "libro":4, "categoria":"Ultimi arrivi"},
 		{ "libro":5, "categoria":"Offerte speciali"},
 		{ "libro":6, "categoria":"Ultimi arrivi"},
+		{ "libro":7, "categoria":"Da non perdere"},
+		{ "libro":8, "categoria":"Ultimi arrivi"},
+		{ "libro":9, "categoria":"Remainders"},
+		{ "libro":10, "categoria":"Offerte speciali"}
 		
 	 ]
 }
