@@ -162,7 +162,7 @@
 			 
 				 if($value["id"] == $valore["ID"])
 				 {
-					$output.= $valore["titolo"]. " " . $value["sconto"]. "   ";
+					$output.= $valore["titolo"]. " " . $value["sconto"]. "% ";
 				 }
 		 }
 	}
