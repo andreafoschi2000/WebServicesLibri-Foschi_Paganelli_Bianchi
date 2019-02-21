@@ -4,8 +4,8 @@
 	include ("function.php");
 	//if(!empty($_GET['index'])){
 	
-			//$index=$_GET['index'];
-			$index = 1;
+			$index=$_GET['index'];
+			//$index = 1;
 			//$price=get_price($name);
 			switch($index)
 			{
@@ -13,13 +13,23 @@
 				$id = get_fumetti();
 				//echo $ids;
 				$count = get_libro($id);
-				deliver_response(200,"Request Successfully", $count);
-				//echo $count;
+				echo $count;
 				break;
 				
 				case 1:
 				$sconti = get_sconti();
-				var_dump($sconti);
+				//var_dump($sconti);
+				$libri = aggiungi_id($sconti);
+
+				$libri_sort = ordina($libri);
+				/*
+				foreach($libri_sort as $libro)
+				{
+					echo($libro["sconto"]."<br>");
+				}
+				*/
+				$output = stampa_libri($libri_sort);
+				echo $output;
 				break;
 				
 				case 2:
@@ -27,7 +37,7 @@
 				
 				case 3:
 				break;
-			}
+			//}
 			
 			/*
 			if(empty($price))
@@ -36,7 +46,7 @@
 			else
 			//respond book price
 			deliver_response(200,"book found", $price); */
-	//	}
+		}
 	/*
 	else
 	{
@@ -44,6 +54,7 @@
 		deliver_response(400,"Invalid request", NULL);
 	}
 	*/
+	
 	
 	function deliver_response($status, $status_message, $data)
 	{

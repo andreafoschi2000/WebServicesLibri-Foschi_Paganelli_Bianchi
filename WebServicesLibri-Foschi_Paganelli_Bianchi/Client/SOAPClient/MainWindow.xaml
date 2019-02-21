@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="btn_query1" Content="Visualizza" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Label Content="Numero libri &quot;Ultimi Arrivi&quot; del reparto &quot;Fumetti:" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Height="32" Width="279"/>
-        <Label x:Name="lbl_query1" Content="" HorizontalAlignment="Left" Margin="107,51,0,0" VerticalAlignment="Top" Width="30"/>
         <Label Content="Elenco dei libri scontati di ogni reparto ordinati &#xD;&#xA;dal meno scontato al più scontato:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Height="42" Width="279"/>
-        <ListBox HorizontalAlignment="Left" Height="214" Margin="106,179,0,0" VerticalAlignment="Top" Width="183"/>
-        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox x:Name="lst_output" HorizontalAlignment="Left" Height="214" Margin="106,179,0,0" VerticalAlignment="Top" Width="183"/>
+        <Button x:Name="btn_query2" Content="Visualizza" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="Elenco libri archiviati:" HorizontalAlignment="Left" Margin="367,19,0,0" VerticalAlignment="Top" Height="32" Width="121"/>
         <Label Content="gg/mm/aaaa" HorizontalAlignment="Left" Margin="407,64,0,0" VerticalAlignment="Top" Height="32" Width="81"/>
         <Label Content="al" HorizontalAlignment="Left" Margin="499,64,0,0" VerticalAlignment="Top" Height="32" Width="26" RenderTransformOrigin="-0.547,0.492"/>

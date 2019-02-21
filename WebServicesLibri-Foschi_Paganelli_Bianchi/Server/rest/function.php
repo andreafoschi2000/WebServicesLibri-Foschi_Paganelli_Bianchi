@@ -110,5 +110,62 @@
 	return $catg;
  }
  
+ function aggiungi_id($sconti)
+ {
+	 $url = file_get_contents('http://localhost/json/libricateg.json');
+	 $libricateg = json_decode($url, true);
+	 $indice = 0;
+	 $libri = array();
+	 foreach ($libricateg as $k=>$v)
+	 {
+		foreach($v as $key=>$value)
+		{
+			 foreach ($sconti as $sconto)
+			 {
+				if($value["categoria"] == $sconto["tipo"])
+				{
+					$libri[$indice]["id"] = $value["libro"];
+					$libri[$indice]["sconto"] = $sconto["sconto"];
+					$indice++;
+				}
+			 }
+		}
+	 }
+	 
+	 return $libri;
+ }
  
+ function ordina($libri)
+ {
+	 $toSort = array();
+	 
+	 foreach($libri as $key => $value)
+	 {
+		 $toSort[$key] = $value['sconto'];
+	 }
+	 
+	 array_multisort($toSort, SORT_ASC, $libri);
+	 
+	 return $libri;
+ }
+ 
+ function stampa_libri($libriSort)
+ {
+	 $url = file_get_contents('http://localhost/json/libri.json');
+	 $books = json_decode($url, true);
+	 $output = "";
+	foreach($libriSort as $key=>$value)
+	{
+		 foreach($books as $k=>$v)
+		 {
+			 foreach($v as $chiave=>$valore)
+			 
+				 if($value["id"] == $valore["ID"])
+				 {
+					$output.= $valore["titolo"]. " " . $value["sconto"]. "   ";
+				 }
+		 }
+	}
+	return $output;
+ }
 ?>

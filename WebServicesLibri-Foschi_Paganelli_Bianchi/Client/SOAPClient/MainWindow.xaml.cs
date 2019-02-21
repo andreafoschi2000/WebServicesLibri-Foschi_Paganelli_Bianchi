@@ -25,6 +25,7 @@ namespace SOAPClient
         public MainWindow()
         {
             InitializeComponent();
+            
         }
          /*
         private void btnGET_Click(object sender, RoutedEventArgs e)
@@ -59,7 +60,7 @@ namespace SOAPClient
             }
         }
 
-        async static void PostRequest(string url, string nome, string cognome, string comune, string data, string sesso)
+        /*async static void PostRequest(string url, string nome, string cognome, string comune, string data, string sesso)
         {
            // MessageBox.Show(nome + " " + cognome + " " + comune + " " + data + " " + sesso);
             IEnumerable<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>()
@@ -87,11 +88,18 @@ namespace SOAPClient
                 }
 
             }
-        }
+        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string url = @"http://10.13.100.27/Server/index.php/" + "?op=0";
+            string url = @"http://10.13.100.27/Server/index.php/" + "?index=0";
+
+            GetRequest(url);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string url = @"http://10.13.100.27/Server/index.php/" + "?index=1";
 
             GetRequest(url);
         }
