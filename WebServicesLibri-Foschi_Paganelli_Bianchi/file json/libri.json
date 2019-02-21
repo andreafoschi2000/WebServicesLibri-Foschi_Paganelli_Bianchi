@@ -3,7 +3,11 @@
 	{ "ID":2, "titolo":"Monnalisa","prezzo":30,"dataarch":"20/10/2017", "reparto":3, "autore":"Giacomo Ravaglia"},
 	{ "ID":3, "titolo":"Il pantheon","prezzo":18,"dataarch":"15/05/2008", "reparto":2, "autore":"Claudio Bisio"},
 	{ "ID":4, "titolo":"Al di là del bene e del male","prezzo":25,"dataarch":"26/01/2003", "reparto":5, "autore":"Nietzche"},
-	{ "ID":5, "titolo":"Come cucinare le lasagne","prezzo":11,"dataarch":"11/02/1999", "reparto":4, "autore":"Antonino Canavacciuolo"}
-	{ "ID":6, "titolo":"Batman","prezzo":17,"dataarch":"10/03/2016", "reparto":1, "autore":"Marco Costanzo"}
+	{ "ID":5, "titolo":"Come cucinare le lasagne","prezzo":11,"dataarch":"11/02/1999", "reparto":4, "autore":"Antonino Canavacciuolo"},
+	{ "ID":6, "titolo":"Batman","prezzo":17,"dataarch":"10/03/2016", "reparto":1, "autore":"Marco Costanzo"},
+	{ "ID":7, "titolo":"Alla fiera dell'Est","prezzo":9,"dataarch":"14/01/1995", "reparto":1, "autore":"Gigi D'Alessio"},
+	{ "ID":8, "titolo":"Ratatouille","prezzo":20,"dataarch":"15/05/2007", "reparto":4, "autore":"Matteo Martini"},
+	{ "ID":9, "titolo":"Il Colosseo","prezzo":13,"dataarch":"09/07/2006", "reparto":2, "autore":"Simone Corbelli"},
+	{ "ID":10, "titolo":"Lo stile gotico","prezzo":16,"dataarch":"08/01/2019", "reparto":3, "autore":"Valerio Staffelli"}
 ]
 }
