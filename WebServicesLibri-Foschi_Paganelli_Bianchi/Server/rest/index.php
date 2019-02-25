@@ -4,8 +4,8 @@
 	include ("function.php");
 	//if(!empty($_GET['index'])){
 	
-			$index=$_GET['index'];
-			//$index = 1;
+			//$index=$_GET['index'];
+			$index = 2;
 			//$price=get_price($name);
 			switch($index)
 			{
@@ -33,6 +33,15 @@
 				break;
 				
 				case 2:
+				//$start=$_GET['start_data'];
+				//$end=$_GET['end_data'];
+				$start = "15/03/2011";
+				$end = "14/07/2012";
+				$output = control_data($start, $end);
+				foreach($output as $name)
+				{
+					echo $name;
+				}
 				break;
 				
 				case 3:

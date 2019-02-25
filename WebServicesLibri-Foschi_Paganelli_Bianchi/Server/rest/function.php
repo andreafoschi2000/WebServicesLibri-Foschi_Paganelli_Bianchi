@@ -168,4 +168,41 @@
 	}
 	return $output;
  }
+ 
+ 
+ function check_in_range($start_date, $end_date, $given_date)
+{
+	$str = strtotime($start_date);
+	$end = strtotime($end_date);
+	$curr = strtotime($given_date);
+	echo $str."<br>".$end."<br>".$curr."<br>";
+    return (($curr >= $str) && ($curr <= $end));
+}
+
+
+ function control_data($start, $end)
+ {
+	$url = file_get_contents('http://localhost/json/libri.json');
+	$books = json_decode($url, true);
+	
+    $start = str_replace('/', '-', $start);
+    $end = str_replace('/', '-', $end);
+	echo $start."<br>";
+	echo $end."<br>";
+	$names = array();
+	$index = 0;
+	
+	foreach($books as $key=>$value)
+	{
+		foreach($value as $k=>$v)
+		{
+			$given_date = str_replace('/', '-', $v["dataarch"]);
+			if(check_in_range($start, $end, $given_date))
+			{
+				$names[$index] = $v["titolo"];
+			}
+		}
+	}
+	return $names;
+ }
 ?>
