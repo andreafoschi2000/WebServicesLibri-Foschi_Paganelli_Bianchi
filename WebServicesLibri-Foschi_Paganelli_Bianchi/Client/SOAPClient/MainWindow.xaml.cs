@@ -27,19 +27,6 @@ namespace SOAPClient
             InitializeComponent();
             
         }
-         /*
-        private void btnGET_Click(object sender, RoutedEventArgs e)
-        {
-            //GET
-            // string url = "http://webservices.dotnethell.it/codicefiscale.asmx/CalcolaCodiceFiscale?Nome=" + txtNome.Text + "&Cognome=" + txtCognome.Text + "&ComuneNascita=" + txtComune.Text + "&DataNascita=" + txtData.Text + "&Sesso=" + txtSesso.Text;
-            // MessageBox.Show(url);
-            //string url = "http://api.openweathermap.org/data/2.5/weather?q=Cesena&mode=xml&units=metric&appid=fae6aadd9464ded0d7b508dc520533ba";
-            string url = "http://localhost/rest/?name="+TxtLibro.Text;
-            GetRequest(url);
-           
-            
-        }
-        */
         
         //posso usare using se è presete metodo dispose
         async static void GetRequest(string url)
@@ -60,57 +47,70 @@ namespace SOAPClient
             }
         }
 
-        /*async static void PostRequest(string url, string nome, string cognome, string comune, string data, string sesso)
-        {
-           // MessageBox.Show(nome + " " + cognome + " " + comune + " " + data + " " + sesso);
-            IEnumerable<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>()
-            {
-                new KeyValuePair<string, string> ("Nome",nome),
-                new KeyValuePair<string, string> ("Cognome",cognome),
-                new KeyValuePair<string, string> ("ComuneNascita",comune),
-                new KeyValuePair<string, string> ("DataNascita",data),
-                new KeyValuePair<string, string> ("Sesso",sesso)
-            };
-            HttpContent q = new FormUrlEncodedContent(queries);
-    
-            using (HttpClient client = new HttpClient())
-            {
-               // client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded");
-                using (HttpResponseMessage response = await client.PostAsync(url,q))
-                { 
-                    using (HttpContent content = response.Content)
-                    {//possiamo usare HttpContentHeader headers = content.Headers;
-                        
-                        string mycontent = await content.ReadAsStringAsync();
-                        MessageBox.Show(mycontent);
-                    }
+        //Importante: l'indirizzo della macchina server(10.13.100.27) è quello della mia macchina virtuale, va modificato quando viene usata una macchina virtuale diversa
 
-                }
-
-            }
-        }*/
-
+        //QUERY N°1
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string url = @"http://10.13.100.27/Server/index.php/" + "?index=0";
-
-            GetRequest(url);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string url = @"http://10.13.100.27/Server/index.php/" + "?index=1";
 
             GetRequest(url);
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        //QUERY N°2
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string url = @"http://10.13.100.27/Server/index.php/" + "?index=2&start_data=" + start + "&end_data=" + end;
+            string url = @"http://10.13.100.27/Server/index.php/" + "?index=2";
 
             GetRequest(url);
         }
 
+        //QUERY N°3, si effettuano i controlli sul corretto inserimento delle date
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string start = txt_start.Text;
+            string end = txt_end.Text;
+
+            int day = 0, month = 0, year = 0;
+
+            string[] start_date = start.Split('/');
+            string[] end_date = end.Split('/');
+
+            if((start_date.Length != 3) || (end_date.Length !=3))
+            {
+                MessageBox.Show("Inserire le date nel formato corretto (gg/mm/aaaa)");   
+            }
+            else
+            { 
+            bool test_day = int.TryParse(start_date[0], out day);
+            bool test_month = int.TryParse(start_date[1], out month);
+            bool test_year = int.TryParse(start_date[2], out year);
+
+                if (!test_day || !test_month || !test_year)
+                    MessageBox.Show("Controlla la data di inizio");
+                else if ((day < 0 || day > 31) || (month < 0) || (month > 12) || (year < 1900 || year > 2019))
+                    MessageBox.Show("Formato errato nella data di inizio (0<giorno<30, 0<mese<12, 1900<anno<2019)");
+                else
+                {
+                    bool test_day_end = int.TryParse(end_date[0], out day);
+                    bool test_month_end = int.TryParse(end_date[1], out month);
+                    bool test_year_end = int.TryParse(end_date[2], out year);
+
+                    if (!test_day_end || !test_month_end || !test_year_end)
+                        MessageBox.Show("Controlla la data di fine");
+                    else if ((day < 0 || day > 31) || (month < 0) || (month > 12) || (year < 1900 || year > 2019))
+                        MessageBox.Show("Formato errato nella data di fine (0<giorno<30, 0<mese<12, 1900<anno<2019)");
+                    else
+                    {
+                        string url = @"http://10.13.100.27/Server/index.php/" + "?index=3&start_data=" + start + "&end_data=" + end;
+
+                        GetRequest(url);
+                    }
+                }
+            }
+        }
+
+        //QUERY N°4, si effettua il controllo sulla correttezza dell'indice
         private void Btn_query4_Click(object sender, RoutedEventArgs e)
         {
             int codice = 0;
@@ -122,7 +122,7 @@ namespace SOAPClient
                 MessageBox.Show("Inserisci un codice valido");
             else
             {
-                string url = @"http://10.13.100.27/Server/index.php/" + "?index=3&codice=" + codice;
+                string url = @"http://10.13.100.27/Server/index.php/" + "?index=4&codice=" + codice;
 
                 GetRequest(url);
             }

@@ -1,31 +1,7 @@
 <?php
- function get_price($find){
-	/* $books=array(
-	 "java"=>299,
-	 "c"=>348,
-	 "php"=>267
-	 );*/
-	$str = file_get_contents('http://localhost/json/book.json');
-	$books = json_decode($str, true); 
-	// echo '<pre>' . print_r($books, true) . '</pre>';
-	/* foreach($books as $book=>$price)
-	 {
-		 if($book==$find)
-		 {
-			 return $price;
-			 break;
-		 }
-	 }*/
-	 
-	 foreach($books['book'] as $book)
-	 {
-		 if($book['name']==$find)
-		 {
-			 return $book['price'];
-			 break;
-		 }
-	 }
- }
+//questi sono i metodi richiamati nel file index.php necessari a risolvere le queries
+
+//controllo il reparto
  function get_libro($index)
  {
 	 $url = file_get_contents('http://localhost/json/libri.json');
@@ -47,6 +23,7 @@
 	 return $count;
  }
  
+ //controllo la categoria
  function get_categoria($valore)
  {
 	 $url = file_get_contents('http://localhost/json/libricateg.json');
@@ -67,6 +44,7 @@
 	 }
 }
  
+ //ricerca dei 'fumetti'
  function get_fumetti()
  {	
 	$url = file_get_contents('http://localhost/json/reparti.json');
@@ -88,6 +66,7 @@
 	}
  }
  
+ //ricerca degli sconti
  function get_sconti()
  {
 	$url = file_get_contents('http://localhost/json/categorie.json');
@@ -110,6 +89,7 @@
 	return $catg;
  }
  
+ //ricerca dei libri scontati
  function aggiungi_id($sconti)
  {
 	 $url = file_get_contents('http://localhost/json/libricateg.json');
@@ -135,6 +115,7 @@
 	 return $libri;
  }
  
+ //ordinamento crescente
  function ordina($libri)
  {
 	 $toSort = array();
@@ -149,6 +130,7 @@
 	 return $libri;
  }
  
+ //creazione della stringa da stampare
  function stampa_libri($libriSort)
  {
 	 $url = file_get_contents('http://localhost/json/libri.json');
@@ -169,7 +151,7 @@
 	return $output;
  }
  
- 
+ //si convertono le date in tempo in modo da effettuare il controllo (maggiore dell'inizio e minore della fine)
  function check_in_range($start_date, $end_date, $given_date)
 {
 	$str = strtotime($start_date);
@@ -179,7 +161,7 @@
     return (($curr >= $str) && ($curr <= $end));
 }
 
-
+//si passano al metodo check_in_range le date formattate correttamente
  function control_data($start, $end)
  {
 	$url = file_get_contents('http://localhost/json/libri.json');
@@ -207,6 +189,7 @@
 	return $names;
  }
  
+ //ricerca dei libri e delle rispettive copie vendute
  function get_books_copies($indice)
  {
 	$url = file_get_contents('http://localhost/json/libricarrello.json');
@@ -229,6 +212,7 @@
 	return $tostamp;
  }
  
+ //ricerca dei titoli dei libri
  function ottieni_libri($codici)
  {
 	$url = file_get_contents('http://localhost/json/libri.json');
@@ -252,7 +236,7 @@
 	return $codici;
  }
  
- 
+ //ricerca dello username associato al carrello (nome + cognome)
  function take_username($numtel)
  {
 	$url = file_get_contents('http://localhost/json/utenti.json');
@@ -271,6 +255,7 @@
 	
  }
  
+ //si passa al metodo take_username il numero di telefono da cui cercare lo username
  function get_username($indice)
  {
 	$url = file_get_contents('http://localhost/json/carrelli.json');
