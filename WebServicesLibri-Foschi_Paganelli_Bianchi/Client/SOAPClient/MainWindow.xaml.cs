@@ -103,5 +103,29 @@ namespace SOAPClient
 
             GetRequest(url);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string url = @"http://10.13.100.27/Server/index.php/" + "?index=2&start_data=" + start + "&end_data=" + end;
+
+            GetRequest(url);
+        }
+
+        private void Btn_query4_Click(object sender, RoutedEventArgs e)
+        {
+            int codice = 0;
+            string text = txt_codice.Text;
+            bool test = int.TryParse(text, out codice);
+            if (!test)
+                MessageBox.Show("Inserisci un valore");
+            else if (codice <= 0 || codice > 10)
+                MessageBox.Show("Inserisci un codice valido");
+            else
+            {
+                string url = @"http://10.13.100.27/Server/index.php/" + "?index=3&codice=" + codice;
+
+                GetRequest(url);
+            }
+        }
     }
 }

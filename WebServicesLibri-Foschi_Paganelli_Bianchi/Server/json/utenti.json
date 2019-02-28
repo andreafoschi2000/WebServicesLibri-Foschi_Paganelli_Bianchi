@@ -1,0 +1,13 @@
+{"utenti":[
+     { "numtelefono":3234724567, "nome":"Alessio","cognome":"Romagnoli","email":"a.b@c.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3664746373, "nome":"Matteo","cognome":"Zavalloni","email":"aa.aa@s.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3486428543, "nome":"Filippo","cognome":"Corbara","email":"ww.ww@d.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3883667832, "nome":"Alberto","cognome":"Tardelli","email":"tt.tt@g.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3879168234, "nome":"Simone","cognome":"Mazzotti","email":"dd.dd@f.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3765284574, "nome":"Samir","cognome":"Ramazzotti","email":"rr.rr.a.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3455738292, "nome":"Enrico","cognome":"Gobbi","email":"ll.ll@h.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3320823745, "nome":"Tiberio","cognome":"Tamburini","email":"kk.kk@q.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3893627838, "nome":"Fabian","cognome":"Ruiz","email":"zz.zz@w.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""},
+	 { "numtelefono":3457569732, "nome":"Paolo","cognome":"Campanini","email":"yy.yy@j.com", "password":1, "indirizzo":"Andrea Foschi", "cap":"", "città":"", "nazione":"","fax":""}
+]
+}

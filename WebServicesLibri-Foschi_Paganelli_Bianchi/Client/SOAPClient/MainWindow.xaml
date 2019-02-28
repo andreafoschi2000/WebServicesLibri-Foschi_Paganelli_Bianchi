@@ -5,24 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SOAPClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="275.717" Width="800">
+    <Grid Height="238" VerticalAlignment="Top">
         <Button x:Name="btn_query1" Content="Visualizza" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Label Content="Numero libri &quot;Ultimi Arrivi&quot; del reparto &quot;Fumetti:" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Height="32" Width="279"/>
         <Label Content="Elenco dei libri scontati di ogni reparto ordinati &#xD;&#xA;dal meno scontato al più scontato:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Height="42" Width="279"/>
-        <ListBox x:Name="lst_output" HorizontalAlignment="Left" Height="214" Margin="106,179,0,0" VerticalAlignment="Top" Width="183"/>
         <Button x:Name="btn_query2" Content="Visualizza" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="Elenco libri archiviati:" HorizontalAlignment="Left" Margin="367,19,0,0" VerticalAlignment="Top" Height="32" Width="121"/>
-        <Label Content="gg/mm/aaaa" HorizontalAlignment="Left" Margin="407,64,0,0" VerticalAlignment="Top" Height="32" Width="81"/>
-        <Label Content="al" HorizontalAlignment="Left" Margin="499,64,0,0" VerticalAlignment="Top" Height="32" Width="26" RenderTransformOrigin="-0.547,0.492"/>
-        <Label Content="gg/mm/aaaa" HorizontalAlignment="Left" Margin="530,64,0,0" VerticalAlignment="Top" Height="32" Width="86"/>
+        <Label Content="al" HorizontalAlignment="Left" Margin="550,64,0,0" VerticalAlignment="Top" Height="32" Width="26" RenderTransformOrigin="-0.547,0.492"/>
         <Label Content="Dal" HorizontalAlignment="Left" Margin="367,64,0,0" VerticalAlignment="Top" Height="32" Width="33"/>
-        <ListBox HorizontalAlignment="Left" Height="135" Margin="447,101,0,0" VerticalAlignment="Top" Width="274"/>
-        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="367,101,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Inserisci codice carrello" HorizontalAlignment="Left" Margin="367,241,0,0" VerticalAlignment="Top" Height="30" Width="137"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="522,241,0,0" VerticalAlignment="Top" Height="30" Width="85"/>
-        <Label Content="Elenco titoli libri acquistati con numero copie&#xD;&#xA;e nome utente associato al carrello" HorizontalAlignment="Left" Margin="367,276,0,0" VerticalAlignment="Top" Height="51" Width="286"/>
-        <Button Content="Visualizza" HorizontalAlignment="Left" Margin="377,332,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox HorizontalAlignment="Left" Height="77" Margin="466,332,0,0" VerticalAlignment="Top" Width="255"/>
+        <Button x:Name="btn_query3" Content="Visualizza" HorizontalAlignment="Left" Margin="367,101,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Label Content="Inserisci codice carrello" HorizontalAlignment="Left" Margin="367,144,0,0" VerticalAlignment="Top" Height="30" Width="137"/>
+        <Label Content="Elenco titoli libri acquistati con numero copie&#xD;&#xA;e nome utente associato al carrello" HorizontalAlignment="Left" Margin="367,181,0,0" VerticalAlignment="Top" Height="51" Width="286"/>
+        <Button x:Name="btn_query4" Content="Visualizza" HorizontalAlignment="Left" Margin="668,193,0,0" VerticalAlignment="Top" Width="75" Click="Btn_query4_Click"/>
+        <TextBox x:Name="txt_start" HorizontalAlignment="Left" Height="23" Margin="405,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.079"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="txt_end" HorizontalAlignment="Left" Height="23" Margin="576,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <Label x:Name="label" Content="Formato: gg/mm/aaaa" HorizontalAlignment="Left" Margin="576,19,0,0" VerticalAlignment="Top" Width="145"/>
+        <TextBox x:Name="txt_codice" HorizontalAlignment="Left" Height="23" Margin="521,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

@@ -1,6 +1,6 @@
 {"categorie": [
-		{ "tipo":"Ultimi arrivi", "sconto":null},
-		{ "tipo":"I più venduti", "sconto":null},
+		{ "tipo":"Ultimi arrivi", "sconto":0},
+		{ "tipo":"I più venduti", "sconto":0},
 		{ "tipo":"Da non perdere", "sconto":20},
 		{ "tipo":"Offerte speciali", "sconto":25},
 		{ "tipo":"Remainders", "sconto":50}

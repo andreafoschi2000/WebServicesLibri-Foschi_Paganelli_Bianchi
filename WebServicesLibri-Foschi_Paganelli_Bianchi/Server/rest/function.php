@@ -162,7 +162,7 @@
 			 
 				 if($value["id"] == $valore["ID"])
 				 {
-					$output.= $valore["titolo"]. " " . $value["sconto"]. "% ";
+					$output.= $valore["titolo"]. "\t" . $value["sconto"]. "%\n";
 				 }
 		 }
 	}
@@ -175,7 +175,7 @@
 	$str = strtotime($start_date);
 	$end = strtotime($end_date);
 	$curr = strtotime($given_date);
-	echo $str."<br>".$end."<br>".$curr."<br>";
+	//echo $str."<br>".$end."<br>".$curr."<br>";
     return (($curr >= $str) && ($curr <= $end));
 }
 
@@ -187,8 +187,7 @@
 	
     $start = str_replace('/', '-', $start);
     $end = str_replace('/', '-', $end);
-	echo $start."<br>";
-	echo $end."<br>";
+	
 	$names = array();
 	$index = 0;
 	
@@ -196,13 +195,100 @@
 	{
 		foreach($value as $k=>$v)
 		{
-			$given_date = str_replace('/', '-', $v["dataarch"]);
-			if(check_in_range($start, $end, $given_date))
+			//echo $v["dataarch"]."<br>";
+			//$given_date = str_replace('/', '-', $v["dataarch"]);
+			if(check_in_range($start, $end, $v["dataarch"]))
 			{
 				$names[$index] = $v["titolo"];
+				$index++;
 			}
 		}
 	}
 	return $names;
+ }
+ 
+ function get_books_copies($indice)
+ {
+	$url = file_get_contents('http://localhost/json/libricarrello.json');
+	$valori = json_decode($url, true);
+	$tostamp = array();
+	$index = 0;
+	
+	foreach($valori as $key=>$value)
+	{
+		foreach($value as $k=>$v)
+		{
+			if($indice == $v["carrello"])
+			{
+				$tostamp[$index]["libro"] = $v["libro"];
+				$tostamp[$index]["ncopie"] = $v["ncopie"];
+				$index++;
+			}
+		}
+	}
+	return $tostamp;
+ }
+ 
+ function ottieni_libri($codici)
+ {
+	$url = file_get_contents('http://localhost/json/libri.json');
+	$books = json_decode($url, true);
+	//$nomi = array();
+	$index = 0;
+	foreach($codici as $key=>$value)
+	{
+		 foreach($books as $k=>$v)
+		 {
+			 foreach($v as $chiave=>$valore)
+			 {
+				 if($value["libro"] == $valore["ID"])
+				 {
+					$codici[$index]["titolo"] = $valore["titolo"];
+					$index++;
+				 }
+			 }
+		 }
+	}
+	return $codici;
+ }
+ 
+ 
+ function take_username($numtel)
+ {
+	$url = file_get_contents('http://localhost/json/utenti.json');
+	$utenti = json_decode($url, true);
+	
+	foreach($utenti as $chiave=>$valore)
+	{
+		foreach($valore as $k=>$v)
+		{
+			if($numtel == $v["numtelefono"])
+			{
+				return $v["nome"]." ".$v["cognome"];
+			}
+		}
+	}
+	
+ }
+ 
+ function get_username($indice)
+ {
+	$url = file_get_contents('http://localhost/json/carrelli.json');
+	$values = json_decode($url, true);
+	$numtel = "";
+	foreach($values as $key=>$value)
+	{
+		foreach($value as $k=>$v)
+		{
+			if($indice == $v["ID"])
+			{
+				$numtel = $v["utente"];
+				break;
+			}
+		}
+	}
+	
+	$username = take_username($numtel);
+	return $username;
  }
 ?>

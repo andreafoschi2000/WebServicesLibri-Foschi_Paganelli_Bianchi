@@ -1,9 +1,13 @@
 {"libri":[
-    { "ID":1, "titolo":"Spiderman","prezzo":15,"dataarch":"13/08/2015", "reparto":1, "autore":"Andrea Foschi"},
-	{ "ID":2, "titolo":"Monnalisa","prezzo":30,"dataarch":"20/10/2017", "reparto":3, "autore":"Giacomo Ravaglia"},
-	{ "ID":3, "titolo":"Il pantheon","prezzo":18,"dataarch":"15/05/2008", "reparto":2, "autore":"Claudio Bisio"},
-	{ "ID":4, "titolo":"Al di là del bene e del male","prezzo":25,"dataarch":"26/01/2003", "reparto":1, "autore":"Nietzche"},
-	{ "ID":5, "titolo":"Come cucinare le lasagne","prezzo":11,"dataarch":"11/02/1999", "reparto":4, "autore":"Antonino Canavacciuolo"},
-	{ "ID":6, "titolo":"Batman","prezzo":17,"dataarch":"10/03/2016", "reparto":1, "autore":"Marco Costanzo"}
+    { "ID":1, "titolo":"Spiderman","prezzo":15,"dataarch":"2015-08-13", "reparto":1, "autore":"Andrea Foschi"},
+	{ "ID":2, "titolo":"Monnalisa","prezzo":30,"dataarch":"2017-10-20", "reparto":3, "autore":"Giacomo Ravaglia"},
+	{ "ID":3, "titolo":"Il pantheon","prezzo":18,"dataarch":"2008-05-15", "reparto":2, "autore":"Claudio Bisio"},
+	{ "ID":4, "titolo":"Al di là del bene e del male","prezzo":25,"dataarch":"2003-01-26", "reparto":5, "autore":"Nietzche"},
+	{ "ID":5, "titolo":"Come cucinare le lasagne","prezzo":11,"dataarch":"1999-02-11", "reparto":4, "autore":"Antonino Canavacciuolo"},
+	{ "ID":6, "titolo":"Batman","prezzo":17,"dataarch":"2016-03-10", "reparto":1, "autore":"Marco Costanzo"},
+	{ "ID":7, "titolo":"Alla fiera dell'Est","prezzo":9,"dataarch":"1995-01-14", "reparto":1, "autore":"Gigi D'Alessio"},
+	{ "ID":8, "titolo":"Ratatouille","prezzo":20,"dataarch":"2007-05-15", "reparto":4, "autore":"Matteo Martini"},
+	{ "ID":9, "titolo":"Il Colosseo","prezzo":13,"dataarch":"2006-07-09", "reparto":2, "autore":"Simone Corbelli"},
+	{ "ID":10, "titolo":"Lo stile gotico","prezzo":16,"dataarch":"2019-01-08", "reparto":3, "autore":"Valerio Staffelli"}
 ]
 }

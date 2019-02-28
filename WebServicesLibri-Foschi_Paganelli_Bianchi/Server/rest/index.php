@@ -4,8 +4,8 @@
 	include ("function.php");
 	//if(!empty($_GET['index'])){
 	
-			//$index=$_GET['index'];
-			$index = 2;
+			$index=$_GET['index'];
+			//$index = 3;
 			//$price=get_price($name);
 			switch($index)
 			{
@@ -33,18 +33,30 @@
 				break;
 				
 				case 2:
-				//$start=$_GET['start_data'];
-				//$end=$_GET['end_data'];
-				$start = "15/03/2011";
-				$end = "14/07/2012";
+				$start=$_GET['start_data'];
+				$end=$_GET['end_data'];
+				
+				
+				//$start = "15/03/2008";
+				//$end = "14/07/2009";
 				$output = control_data($start, $end);
 				foreach($output as $name)
 				{
-					echo $name;
+					echo $name."\n";
 				}
 				break;
 				
 				case 3:
+				//$indice = 6;
+				$indice=$_GET['codice'];
+				$codici = get_books_copies($indice);
+				$libri = ottieni_libri($codici);
+				$username = get_username($indice);
+				echo $username."\n";
+				foreach($libri as $libro)
+				{
+					echo $libro["titolo"]."\tCopie: ".$libro["ncopie"]."\n";
+				}
 				break;
 			//}
 			
